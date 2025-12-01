@@ -17,8 +17,8 @@ await esbuild.build({
 export default function (eleventyConfig) {
   files
     .filter((f) => !f.endsWith(".md") && !/\d{2}.ts/.test(f))
-    .forEach((s) => eleventyConfig.ignores.add("aoc2024" + "/" + s));
-  eleventyConfig.addPassthroughCopy({ "dist/*.js": "aoc/2024" });
+    .forEach((s) => eleventyConfig.ignores.add("aoc2025" + "/" + s));
+  eleventyConfig.addPassthroughCopy({ "dist/*.js": "aoc/2025" });
   eleventyConfig.addTemplateFormats("ts");
   eleventyConfig.addExtension("ts", {
     compile: (inputContent, inputPath) => {

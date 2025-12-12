@@ -20,7 +20,8 @@ const task = new Solution(
     ).sort((a, b) => a.dis - b.dis);
     const circuits: Set<Set<number>> = new Set(arr.map((_, i) => new Set([i])));
     for (let i = 0; i < (isTest ? 10 : 1000); i++) {
-      const shortest = distances.shift()!;
+      const shortest = distances.shift();
+      if (shortest === undefined) break;
       const newConn = circuits.values().filter((c) =>
         c.has(shortest.a) || c.has(shortest.b)
       ).toArray();
